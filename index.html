@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rija — Will you marry me?</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stage">
+    <header class="top">
+      <h1 class="brand">For <span class="name">Rija</span></h1>
+      <p class="sub">A special page made with love</p>
+    </header>
+
+    <main class="hero">
+      <div class="heart-grid" aria-hidden="true">
+        <div class="heart">❤</div>
+        <div class="heart">❤</div>
+        <div class="heart">❤</div>
+      </div>
+
+      <section class="card">
+        <h2>Rija, will you marry me?</h2>
+        <p class="lead">I made this just for you — every word is true.</p>
+        <button id="proposeBtn" class="btn primary" onclick="startProposal()">Open my heart</button>
+        <button id="previewBtn" class="btn" onclick="previewMessage()">Preview message</button>
+      </section>
+    </main>
+
+    <!-- Proposal modal -->
+    <div id="proposalModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-inner">
+        <h2 class="modal-title">Rija, তুমি আমার জীবন হবে?</h2>
+        <p class="modal-text">আমি তোমার হাসি, তোমার কথায়, তোমার সবসময় পাশে থাকতে চাই। কি বলবে?</p>
+        <div class="actions">
+          <button class="btn accept" onclick="respond(true)">Yes, I will ❤️</button>
+          <button class="btn decline" onclick="respond(false)">Give me time</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Celebration overlay -->
+    <div id="celebrate" class="celebrate" aria-hidden="true">
+      <div class="celebrate-inner">
+        <h2>She said YES! 🎉</h2>
+        <p>Rija — আমি তোমাকে ভালোবাসি। চল একসাথে আজীবন।</p>
+        <button class="btn" onclick="resetPage()">Start again</button>
+      </div>
+      <canvas id="confettiCanvas"></canvas>
+    </div>
+
+    <footer class="foot">Made with ❤️ for Rija</footer>
+  </div>
+
+  <!-- Optional: add 'romantic.mp3' in same folder to autoplay on celebration -->
+  <audio id="music" src="romantic.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
